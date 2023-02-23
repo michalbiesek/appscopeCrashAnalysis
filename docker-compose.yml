@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  redis-app:
+    container_name: redis-app
+    build : redis
+    command: ["redis-server", "--protected-mode", "no"]
+    ports:
+       - 6379:6379
+    volumes:
+      - /var/run/appscope:/var/run/appscope
+    restart: unless-stopped
+
+  edge-worker1:
+    container_name: edge-worker1
+    image: cribl/cribl:latest
+    privileged: true
+    environment:
+      - CRIBL_EDGE=1
+      - CRIBL_DIST_MODE=managed-edge
+      - CRIBL_DIST_MASTER_URL=tls://${CLOUD_TOKEN}@${CLOUD_LEADER_HOSTNAME}:4200?group=${CLOUD_FLEET_NAME}
+    volumes:
+      - /var/run/appscope:/var/run/appscope
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /:/hostfs:ro
+    network_mode: host
+    restart: unless-stopped
+    env_file:
+      - .env
