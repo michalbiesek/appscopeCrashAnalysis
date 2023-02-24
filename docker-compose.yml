@@ -2,6 +2,7 @@ version: '3.7'
 services:
   redis-app:
     container_name: redis-app
+    hostname: redis-app-host
     build : redis
     command: ["redis-server", "--protected-mode", "no"]
     ports:
@@ -12,6 +13,7 @@ services:
 
   edge-worker1:
     container_name: edge-worker1
+    hostname: edge-worker1-host
     image: cribl/cribl:latest
     privileged: true
     environment:

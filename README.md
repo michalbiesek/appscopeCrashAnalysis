@@ -54,6 +54,13 @@ docker ps
 ```
 
 ## Scope example application
+
+```bash
+sudo ./bin/linux/x86_64/scope attach -c edge --backtrace --coredump redis-server
 ```
-sudo ./bin/linux/x86_64/scope attach -c edge redis-server
+
+## Scope daemon
+
+```bash
+sudo ./bin/linux/x86_64/scope daemon --filedest localhost:10087
 ```
