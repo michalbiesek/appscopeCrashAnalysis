@@ -7,8 +7,8 @@ Demo to present AppScope Crash analysis capabilities using Cribl product
 
 Fill up `.env` file with cloud credentials values:
 
-- `CLOUD_LEADER_HOSTNAME` - Leader Node hostname
-- `CLOUD_TOKEN` - Leader Node’s shared secret (authToken)
+- `CLOUD_LEADER_HOSTNAME` - Leader Edge Node hostname
+- `CLOUD_TOKEN` - Leader Edge Node’s shared secret (authToken)
 - `CLOUD_FLEET_NAME` - Name of the cluster’s Worker Group.
 
 See details [here](https://docs.cribl.io/edge/environment-variables/).
@@ -35,7 +35,7 @@ docker ps
 
 CONTAINER ID   IMAGE                             COMMAND                  CREATED         STATUS        PORTS                                       NAMES
 c6d3aa03a82b   appscopecrashanalysis_redis-app   "redis-server --prot…"   2 seconds ago   Up 1 second   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp   redis-app
-463a313d5554   cribl/cribl:latest                "/sbin/entrypoint.sh…"   2 seconds ago   Up 1 second                                               edge-worker1
+463a313d5554   cribl/cribl:latest                "/sbin/entrypoint.sh…"   2 seconds ago   Up 1 second                                               edge-node1
 ```
 
 ## Building

@@ -11,9 +11,9 @@ services:
       - /var/run/appscope:/var/run/appscope
     restart: unless-stopped
 
-  edge-worker1:
-    container_name: edge-worker1
-    hostname: edge-worker1-host
+  edge-node1:
+    container_name: edge-node1
+    hostname: edge-node1-host
     image: cribl/cribl:latest
     privileged: true
     environment:
