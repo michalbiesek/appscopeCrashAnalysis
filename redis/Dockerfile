@@ -10,7 +10,7 @@ RUN apt update -y && \
 RUN cd /tmp && wget ${REDIS_URL} -O redis.tgz \
     && mkdir redis \
     && tar -zxvf redis.tgz --directory redis --strip-components=1 \
-    && cd redis && make noopt \
+    && cd redis && make -j`nproc` \
     && cp ./src/redis-server /bin/ \
     && cp ./src/redis-cli /bin/ \
     && rm -rf redis.tar.gz && rm -rf redis
