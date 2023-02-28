@@ -1,0 +1,21 @@
+{
+  "id": "AppScopeSnapshot",
+  "systemFields": [
+    "cribl_pipe"
+  ],
+  "streamtags": [],
+  "addIdToStagePath": true,
+  "removeEmptyDirs": false,
+  "partitionExpr": "C.Time.strftime(_time ? _time : Date.now()/1000, '%Y/%m/%d')",
+  "format": "json",
+  "baseFileName": "`CriblOut`",
+  "fileNameSuffix": "`.${C.env[\"CRIBL_WORKER_ID\"]}.${__format}${__compression === \"gzip\" ? \".gz\" : \"\"}`",
+  "maxFileSizeMB": 32,
+  "maxFileOpenTimeSec": 300,
+  "maxFileIdleTimeSec": 30,
+  "maxOpenFiles": 100,
+  "onBackpressure": "block",
+  "compress": "none",
+  "type": "filesystem",
+  "destPath": "/tmp/snapshotData"
+}

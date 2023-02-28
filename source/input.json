@@ -1,0 +1,27 @@
+{
+  "disabled": false,
+  "sendToRoutes": false,
+  "pqEnabled": false,
+  "streamtags": [],
+  "host": "0.0.0.0",
+  "tls": {
+    "disabled": true
+  },
+  "ipWhitelistRegex": "/.*/",
+  "maxActiveCxn": 1000,
+  "enableProxyHeader": false,
+  "staleChannelFlushMs": 10000,
+  "enableHeader": false,
+  "preprocess": {
+    "disabled": true
+  },
+  "id": "TCP_AppScopeDaemon",
+  "type": "tcp",
+  "port": 10087,
+  "connections": [
+    {
+      "output": "AppScopeSnapshot",
+      "pipeline": "pack:AppScopeSnapshot"
+    }
+  ]
+}

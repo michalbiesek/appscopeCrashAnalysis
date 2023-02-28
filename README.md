@@ -19,6 +19,10 @@ See details [here](https://docs.cribl.io/edge/environment-variables/).
 
 - Import [snapshot-pack](snapshot-pack/AppScopeSnapshot_1.0.0.crbl) as described [here](https://docs.cribl.io/stream/packs/?_gl=1*ktnf9j*_up*MQ..*_ga*MTMyODQ3MTA4Ny4xNjc3NTgyNTI5*_ga_NM9RJKZ94V*MTY3NzU4MjUyOS4xLjEuMTY3NzU4MjUzOS4wLjAuMA..#file) in Edge Leader
 
+- Setup AppScope Crash Data [source](source/input.json) in Edge Leader
+
+- Setup AppScope Crash Data [destination](destination/output.json) in Edge Leader
+
 
 ## Overview
 This demo environment uses:
