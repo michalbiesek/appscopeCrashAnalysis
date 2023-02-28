@@ -23,6 +23,9 @@ See details [here](https://docs.cribl.io/edge/environment-variables/).
 
 - Setup AppScope Crash Data [destination](destination/output.json) in Edge Leader
 
+- Setup data Route:
+
+![data_route](data_route.png)
 
 ## Overview
 This demo environment uses:
