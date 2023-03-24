@@ -11,6 +11,31 @@ services:
       - /var/run/appscope:/var/run/appscope
     restart: unless-stopped
 
+  top-app:
+    container_name: top-app
+    image: ubuntu:18.04
+    command: ["top"]
+    environment:
+      - TERM=xterm
+    tty: true
+    volumes:
+      - /var/run/appscope:/var/run/appscope
+    restart: unless-stopped
+
+  java-app:
+    container_name: java-app
+    build : javaserver
+    ports:
+       - 8789:8789
+    volumes:
+      - /var/run/appscope:/var/run/appscope
+
+  oomdemo-1:
+    container_name: oomdemo-1
+    build: oomdemo
+    mem_limit: 300m
+    restart: unless-stopped
+
   edge-node1:
     container_name: edge-node1
     hostname: edge-node1-host
