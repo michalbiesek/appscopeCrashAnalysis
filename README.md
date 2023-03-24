@@ -38,7 +38,11 @@ This demo environment uses:
 
 The schema below depicts the demo setup.
 
-![Schema_overall](schema.png)
+![scenario1]
+(scenario1.gif)
+
+![scenario2]
+(scenario2.gif)
 
 ## Verify environment
 
